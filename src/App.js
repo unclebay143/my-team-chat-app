@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React, { useState, useEffect } from "react";
+import { supabase } from "./supabaseClient";
+import Auth from "./pages/Authentication/Auth";
+import { ChatPage } from "./pages/ChatPage/ChatPage";
+import "stream-chat-react/dist/css/index.css";
+import "./App.css";
+
+export default function Home() {
+  // keep track of the user's current state
+  const [session, setSession] = useState(null);
+
+  useEffect(() => {
+    setSession(supabase.auth.session());
+    supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      {!session ? (
+        <Auth />
+      ) : (
+        <ChatPage key={session.user.id} session={session} />
+      )}
+    </React.Fragment>
   );
 }
-
-export default App;

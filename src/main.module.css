@@ -1,0 +1,48 @@
+.Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.FormWrap {
+  border: 1px solid #cccccc;
+  padding: 5rem;
+}
+
+.Heading {
+  color: rgb(30, 144, 255);
+  margin: 1rem 0;
+}
+
+.Description {
+  margin: 0.8rem 0;
+  color: #ff0000;
+}
+
+.FieldWrapper {
+  width: 100%;
+}
+
+.InputField {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 8px;
+  font-size: 0.9rem;
+  border: 1px solid black;
+}
+
+.Button {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1rem;
+  text-transform: capitalize;
+  background-color: rgb(30, 144, 255);
+  color: white;
+  border: none;
+}
