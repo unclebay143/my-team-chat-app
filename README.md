@@ -6,7 +6,7 @@
 - Stream Chat React SDK
 - Supabase Passwordless Magic Link
 
-Link to backend repository:
+Link to backend repository: [click here](https://github.com/unclebay143/my-team-chat-app-backend)
 
 
 ## Chat App UI:
